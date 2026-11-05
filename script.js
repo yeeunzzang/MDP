@@ -85,6 +85,39 @@ captureBtn.addEventListener("click", () => {
 
     ctx.restore();
 
+    
+    const dataURL = captureCanvas.toDataURL("image/jpeg", 0.8);
+    const base64Image = dataURL.split(",")[1];
+
+    console.log(base64Image);
+
+//     // 이미지를 Base64로 변환
+// const dataURL = captureCanvas.toDataURL("image/jpeg", 0.8);
+// const base64Image = dataURL.split(",")[1];
+
+// // 서버 주소
+// const API_URL = "http://서버주소";
+
+// // 서버에 이미지 전송
+// fetch(`${API_URL}/result/${encodeURIComponent(base64Image)}`, {
+//     method: "POST"
+// })
+// .then((response) => {
+//     if (!response.ok) {
+//         throw new Error("서버 요청 실패");
+//     }
+
+//     return response.json();
+// })
+// .then((data) => {
+//     console.log(data);
+//     showResult(data);
+// })
+// .catch((error) => {
+//     console.error("오류 발생:", error);
+//     alert("서버와 통신하는 중 오류가 발생했습니다.");
+// });
+
 
     // =========================
     // 화면 전환
@@ -128,3 +161,7 @@ resetBtn.addEventListener("click", () => {
     cameraPage.classList.remove("hidden");
 
 });
+
+
+
+
